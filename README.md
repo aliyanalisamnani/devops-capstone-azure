@@ -114,7 +114,7 @@ terraform apply -auto-approve
 
 | Field                     | Details                                                                                                |
 | ------------------------- | ------------------------------------------------------------------------------------------------------ |
-| **Name:**                 | S21CSC02                                                                                               |
+| **Name:**                 | Aliyan Ali                                                                                             |
 | **Program:**              | BS Computer Science                                                                                    |
 | **University:**           | Salim Habib University                                                                                 |
 | **Azure DevOps Project:** | https://dev.azure.com/S21CSC02/DevOps-Capstone                                                         |
