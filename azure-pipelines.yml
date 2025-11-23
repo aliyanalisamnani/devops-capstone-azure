@@ -15,17 +15,23 @@ stages:
   jobs:
   - job: pytest
     pool:
-      name: Capstone      
+      name: Capstone
     steps:
     - checkout: self
+
     - script: |
-        echo === Python installations discovered ===
-        py --list || ver
-        echo === Using local Python 3.11 ===
-        py -3.11 -m pip install --upgrade pip
-        py -3.11 -m pip install -r app/requirements.txt pytest
-        py -3.11 -m pytest -q app/test_app.py
-      displayName: Use local Python 3.11 to run tests
+        echo === Using embedded Python ===
+        C:\Python311\python.exe --version
+
+        echo === Installing pip packages ===
+        C:\Python311\python.exe -m pip install --upgrade pip
+
+        C:\Python311\python.exe -m pip install -r app/requirements.txt pytest
+
+        echo === Running pytest ===
+        C:\Python311\python.exe -m pytest -q app/test_app.py
+      displayName: Run tests using embedded Python
+
 
 # --- CD: build + load + deploy to Minikube ---
 - stage: build_deploy
